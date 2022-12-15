@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#00ff0000"
+        android:layout_gravity="center"
+        android:src="@drawable/login"
+         />
+    <ImageView
+        android:id="@+id/effect1"
+        android:layout_width="53dp"
+        android:layout_height="46dp"
+
+        android:layout_marginLeft="250dp"
+        android:alpha="0.3"
+        android:src="@drawable/effect"
+        />
+    <ImageView
+        android:id="@+id/effect2"
+        android:layout_width="27dp"
+        android:layout_height="26dp"
+        android:layout_marginLeft="150dp"
+
+
+        android:alpha="0.3"
+        android:src="@drawable/effect" />
+
+    <EditText
+        android:id="@+id/Login_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint = "E-mail"
+        android:textColorHint="@color/Light_Gray"
+        android:textColor="@color/mid_Gray"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="100dp"/>
+
+    <EditText
+        android:id="@+id/Login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint = "PassWord"
+        android:textColorHint="@color/Light_Gray"
+        android:textColor="@color/mid_Gray"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"/>
+
+
+    <Button
+        android:id="@+id/Login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:textColor="#555555"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:background="#00ff0000"
+        android:layout_marginRight="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/Find_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Find Password"
+        android:textColor="#555555"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:background="#00ff0000"
+        android:layout_marginRight="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginBottom="20dp"/>
+
+
+</LinearLayout>

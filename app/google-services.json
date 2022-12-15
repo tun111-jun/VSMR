@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "674686782563",
+    "project_id": "tune-your-area",
+    "storage_bucket": "tune-your-area.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674686782563:android:f172ee99b5505f73a0fc56",
+        "android_client_info": {
+          "package_name": "com.example.app3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "674686782563-fhgsfhsjj7fbjt6u701t4ep0c9mn6pl9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app3",
+            "certificate_hash": "1ecfc7e6d3fe6510a6b92908d6212643af8db9ba"
+          }
+        },
+        {
+          "client_id": "674686782563-os6lnml1kq6v8vtgintu4a2kii3s67gt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHKP0rGgcxfzBDBiiCn2zBsqr_pWi-n4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "674686782563-os6lnml1kq6v8vtgintu4a2kii3s67gt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
