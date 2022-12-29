@@ -4,16 +4,27 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable-v24/custom_seekbar_progress.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/after_click_effect.xml" value="0.1185" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/before_click_effect.xml" value="0.1185" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/custom_seekbar_progress.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/drawable.xml" value="0.133" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/activity_main.xml" value="0.213768115942029" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/linearborder.xml" value="0.1185" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/music_list.xml" value="0.1185" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/rippleeffect2.xml" value="0.1185" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/roundborder.xml" value="0.1185" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/roundborder2.xml" value="0.1185" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/roundborder3.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/select_click_effect.xml" value="0.1185" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/drawable/square.xml" value="0.243" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/font/fontstyle.xml" value="0.21944444444444444" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/activity_picture.xml" value="0.21" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/connectserver.xml" value="0.274609375" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/fade_in.xml" value="0.3029891304347826" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/findpassword.xml" value="0.33" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/home.xml" value="0.18" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/listview.xml" value="0.17603850050658562" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/login.xml" value="0.26382978723404255" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/login.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/parser.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/playlist.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/app3/app/src/main/res/layout/selectpage.xml" value="0.27802690582959644" />

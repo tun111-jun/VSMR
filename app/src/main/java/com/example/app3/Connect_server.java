@@ -83,6 +83,7 @@ public class Connect_server extends AppCompatActivity {
                 String str = e.getMessage().toString();
                 Log.w("discnt", str + " 1");
             } catch (IOException e) {
+                
                 String str = e.getMessage().toString();
                 Log.w("discnt", str + " 2");
             }
