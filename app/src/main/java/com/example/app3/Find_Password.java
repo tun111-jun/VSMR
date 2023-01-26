@@ -1,5 +1,6 @@
 package com.example.app3;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,7 +39,6 @@ public class Find_Password extends AppCompatActivity {
         setContentView(R.layout.findpassword);
 
         EditText getEmail = findViewById(R.id.SendEmail);
-
 
         Button SendEmail_Button = findViewById(R.id.SendButton);
 

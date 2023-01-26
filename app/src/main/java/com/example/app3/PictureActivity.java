@@ -22,11 +22,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -36,8 +41,11 @@ public class PictureActivity extends AppCompatActivity {
 
     Uri uri;
     ImageView imageView;
+    Button button_send;
     Button back;
+    private String keyword="p/1.png";
     private final long finishtimed=1500;
+    private FirebaseStorage storage;
     private long presstime=0;
     Intent serv;
     //Intent serv = new Intent(this, Connect_server.class);
@@ -50,6 +58,8 @@ public class PictureActivity extends AppCompatActivity {
 //        actionBar.hide();
 
         imageView = findViewById(R.id.imageUpload);
+        button_send=findViewById(R.id.Start);
+        storage=FirebaseStorage.getInstance();
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,25 +110,51 @@ public class PictureActivity extends AppCompatActivity {
                 @Override
                 public void onActivityResult(ActivityResult result) {
                     if(result.getResultCode()==RESULT_OK && result.getData() != null){
+                        System.out.println("OnACtivityResult2");
                         uri = result.getData().getData();
+                        StorageReference storageRef=storage.getReference();
 
+                        StorageReference riversRef=storageRef.child(keyword);
+                        UploadTask uploadTask=riversRef.putFile(uri);
 
                         try{
-                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-                            System.out.println("Path : "+uri.getPath());
+                            System.out.println("OnACtivityResult1");
+                            InputStream in=getContentResolver().openInputStream(result.getData().getData());
+                            Bitmap img=BitmapFactory.decodeStream(in);
+                            in.close();
+                            imageView.setImageBitmap(img);
+                            System.out.println("OnACtivityResult3");
+//                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+//                            System.out.println("Path : "+uri.getPath());
+//
+//                            imageView.setImageBitmap(bitmap);
+//                            ByteArrayOutputStream stream=new ByteArrayOutputStream();
+//
+//                            bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
+//                            byte[] bytearray=stream.toByteArray();
+//                            //String byteaaray= Base64.encodeToString(bytearray,Base64.NO_WRAP);
+//                            //Bitmap compressedBitmap = BitmapFactory.decodeByteArray(bytearray,0,bytearray.length);
+//
+                            if(button_send.getVisibility() == View.INVISIBLE){
+                                button_send.setVisibility(View.VISIBLE);
+                            }
+                            button_send.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
 
-                            imageView.setImageBitmap(bitmap);
-                            ByteArrayOutputStream stream=new ByteArrayOutputStream();
 
-                            bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
-                            byte[] bytearray=stream.toByteArray();
-                            //String byteaaray= Base64.encodeToString(bytearray,Base64.NO_WRAP);
-                            //Bitmap compressedBitmap = BitmapFactory.decodeByteArray(bytearray,0,bytearray.length);
+                                    serv.putExtra("Date", keyword);
 
-                            serv.putExtra("Date", bytearray);
-                            startActivity(serv);
-
-                            System.out.println("BYTEARRAY: "+bytearray);
+                                    startActivity(serv);
+                                    overridePendingTransition(R.transition.fade_in, R.transition.fade_out);
+                                    //finish();
+                                }
+                            });
+//                            serv.putExtra("Date", keyword);
+//
+//                            startActivity(serv);
+//
+//                            System.out.println("BYTEARRAY: "+bytearray);
 
                         }catch (FileNotFoundException e){
                             e.printStackTrace();

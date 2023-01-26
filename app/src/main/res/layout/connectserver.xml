@@ -7,27 +7,8 @@
     android:orientation="vertical"
     tools:context=".Connect_server">
 
-    <TextView
-        android:id="@+id/send_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        />
-    <TextView
-        android:id="@+id/read_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        />
-    <Button
-        android:id="@+id/send_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="전체재생" />
-    <EditText
-        android:id="@+id/send_editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="dsds"/>
+
+
+
 
 </LinearLayout>

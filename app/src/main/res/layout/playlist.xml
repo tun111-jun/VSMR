@@ -43,19 +43,20 @@
         android:textColor="#555555"
         android:id="@+id/textView"
         android:layout_weight="1" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:maxHeight="60dp"-->
+<!--            android:maxWidth="60dp"-->
+<!--            android:src="@drawable/play3"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            />-->
 
 </LinearLayout>
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:maxHeight="60dp"-->
-<!--        android:maxWidth="60dp"-->
-<!--        android:src="@drawable/play3"-->
-<!--        android:background="@android:color/transparent"-->
-<!--        android:adjustViewBounds="true"-->
-<!--        android:scaleType="fitCenter"-->
-<!--        />-->
+
 
 </LinearLayout>

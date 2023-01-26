@@ -99,6 +99,7 @@ public class Login extends AppCompatActivity {
                                 Uid=profile.getUid();
 
                                 Log.d("TOKEN",Uid);
+
                                 //String UId=Uid;
                             }
                             //이후에 임의의 엑티비티에서 넘겨진 해당 Uid를 활용
