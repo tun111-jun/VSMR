@@ -23,8 +23,7 @@ public class SelectPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectpage);
 
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.hide();
+
 
         ImageButton interiorbtn = (ImageButton) findViewById(R.id.interiorImage);
         ImageButton profilebtn = (ImageButton) findViewById(R.id.profileImage);
@@ -40,11 +39,7 @@ public class SelectPage extends AppCompatActivity {
         gobtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(getApplicationContext(), MusicPlaylist.class);
-//                startActivity(intent);
-                //Intent intent = new Intent(getApplicationContext(), Youtube.class);
-                // intent = new Intent(getApplicationContext(), Connect_server.class);
-                //startActivity(intent);
+
                 overridePendingTransition(R.transition.fade_in, R.transition.fade_out);
             }
         });
@@ -54,8 +49,7 @@ public class SelectPage extends AppCompatActivity {
             public void onClick(View view){
                 Log.d("확인","클릭");
 
-//                hidden1.setBackgroundColor(context.getResources().getColor(R.color.fill));
-//                in_hidden1.setBackgroundColor(context.getResources().getColor(R.color.out));
+
                 Intent intent = new Intent(getApplicationContext(), PictureActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.transition.fade_in, R.transition.fade_out);
@@ -66,7 +60,7 @@ public class SelectPage extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Log.d("확인","클릭");
-//
+
 //                hidden2.setBackgroundColor(context.getResources().getColor(R.color.fill));
 //                in_hidden2.setBackgroundColor(context.getResources().getColor(R.color.out));
                 Intent intent = new Intent(getApplicationContext(), PictureActivity.class);
