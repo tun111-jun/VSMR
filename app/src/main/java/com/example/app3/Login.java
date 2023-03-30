@@ -31,8 +31,6 @@ public class Login extends AppCompatActivity {
     boolean isLogin = false;
     Intent moveToYoutube;
     Intent moveToSelect;
-    //Intent moveToHome = new Intent(this, Home.class);
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

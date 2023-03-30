@@ -37,11 +37,8 @@ public class Find_Password extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.findpassword);
-
         EditText getEmail = findViewById(R.id.SendEmail);
-
         Button SendEmail_Button = findViewById(R.id.SendButton);
-
         Intent moveToLogin = new Intent(this, Login.class);
 
         SendEmail_Button.setOnClickListener(new View.OnClickListener() {

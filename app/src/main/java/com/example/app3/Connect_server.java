@@ -53,8 +53,6 @@ public class Connect_server extends AppCompatActivity {
         // show dialog
         dialog.show();
 
-
-
         Intent intent = getIntent();
         CONNECT_MSG = intent.getStringExtra("Date");
         System.out.println("String" + CONNECT_MSG);
@@ -64,10 +62,8 @@ public class Connect_server extends AppCompatActivity {
     }
 
     private class Connect extends AsyncTask<String, String, Void> {
-
         private String output_message;
         private String input_message;
-
 
         @Override
         protected Void doInBackground(String... strings) {
@@ -117,7 +113,6 @@ public class Connect_server extends AppCompatActivity {
         protected void onProgressUpdate(String... params) {
             send_textView.setText(""); // Clear the chat box
             send_textView.append("보낸 메세지: " + output_message);
-
 
         }
     }
