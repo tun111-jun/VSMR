@@ -91,7 +91,7 @@ public class Connect_server extends AppCompatActivity {
 
                 String line = "";
                 while (true) {
-                    line = dataInput.readLine();
+                    line = dataInput.readUTF();
                     System.out.println("line! : " + line);
                     if (line != null) {
                         dialog.dismiss();

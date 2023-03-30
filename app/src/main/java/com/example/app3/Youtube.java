@@ -108,12 +108,7 @@ public class Youtube extends YouTubeBaseActivity {
         Music_list = CharMatcher.anyOf(charsToRemove).removeFrom(Music_list);
         Music_list=Music_list.replaceAll(" ","");
         videoId = Music_list.split(",");
-        System.out.println("Music_list"+Music_list+"\n");
-        System.out.println("videoId"+videoId+"\n");
-        System.out.println("Music_list"+Music_list+"\n");
-        System.out.println("videoId"+videoId+"\n");
-        System.out.println("Music_list"+Music_list+"\n");
-        System.out.println("videoId"+videoId+"\n");
+
 
         initPlayer();
         oDialog = new AlertDialog.Builder(this,
