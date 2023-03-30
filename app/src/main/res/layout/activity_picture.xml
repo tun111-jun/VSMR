@@ -19,22 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/uploadimage"/>
 
-    <Button
-        android:id="@+id/backPicture"
-        android:layout_width="103dp"
-        android:layout_height="47dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="280dp"
-        android:layout_marginBottom="632dp"
-        android:background="#00ff0000"
-        android:text="GO"
-        android:textColor="@color/text"
-        android:textSize="20sp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
 
     <ImageView
         android:id="@+id/imageUpload"
@@ -43,14 +27,14 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="30dp"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backPicture"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img" />
-
 
     <Button
         android:id="@+id/Start"
@@ -58,7 +42,7 @@
         android:layout_height="47dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:layout_marginBottom="45sp"
         android:background="#00ff0000"
         android:gravity="bottom|center"

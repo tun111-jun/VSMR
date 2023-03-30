@@ -72,8 +72,6 @@ public class PictureActivity extends AppCompatActivity {
                 overridePendingTransition(R.transition.fade_in, R.transition.fade_out);
             }
         });
-
-        back = findViewById(R.id.backPicture);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
