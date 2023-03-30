@@ -34,38 +34,39 @@
         android:gravity="center"
         android:text="Go"
         android:textAlignment="center"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/interiorText"
-        android:layout_width="85dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="368dp"
-        android:gravity="center"
-        android:text="Interior"
-        android:fontFamily="@font/gabriola"
-        android:textColor="@color/text"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <TextView-->
+<!--        android:id="@+id/interiorText"-->
+<!--        android:layout_width="85dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="368dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Interior"-->
+<!--        android:fontFamily="@font/gabriola"-->
+<!--        android:textColor="@color/text"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <TextView
-        android:id="@+id/profileText"
-        android:layout_width="85dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="648dp"
-        android:gravity="center"
-        android:text="Profile"
-        android:fontFamily="@font/gabriola"
-        android:textColor="@color/text"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <TextView-->
+<!--        android:id="@+id/profileText"-->
+<!--        android:layout_width="85dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="648dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Profile"-->
+<!--        android:fontFamily="@font/gabriola"-->
+<!--        android:textColor="@color/text"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 
     <Button

@@ -23,6 +23,8 @@ public class SelectPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selectpage);
 
+
+
         ImageButton interiorbtn = (ImageButton) findViewById(R.id.interiorImage);
         ImageButton profilebtn = (ImageButton) findViewById(R.id.profileImage);
 
