@@ -51,13 +51,13 @@ public class Connect_server extends AppCompatActivity {
 
 
 
-        /*dialog = new ProgressDialog(
+        dialog = new ProgressDialog(
                 Connect_server.this);
         dialog.setProgressStyle(android.R.style.Widget_ProgressBar_Horizontal);
         dialog.setMessage("Creating a playlist...");
 
         // show dialog
-        dialog.show();*/
+        dialog.show();
 
         ImageView piano = (ImageView) findViewById(R.id.gif_image);
         DrawableImageViewTarget gifImage = new DrawableImageViewTarget(piano);
