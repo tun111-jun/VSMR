@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import java.io.*;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -71,6 +71,9 @@ public class Connect_server extends AppCompatActivity {
                 client = new Socket(SERVER_IP, 12125);
                 dataOutput = new DataOutputStream(client.getOutputStream());
                 dataInput = new DataInputStream(client.getInputStream());
+//                InputStreamReader inputStreamReader = new InputStreamReader(dataInput, StandardCharsets.UTF_8);
+//                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
                 output_message = strings[0];
                 dataOutput.writeUTF(output_message);
 
@@ -87,7 +90,12 @@ public class Connect_server extends AppCompatActivity {
 
                 String line = "";
                 while (true) {
-                    line = dataInput.readLine();
+                    InputStreamReader inputStreamReader = new InputStreamReader(dataInput, StandardCharsets.UTF_8);
+                    BufferedReader reader = new BufferedReader(inputStreamReader);
+                    line = reader.readLine();
+//                    line = dataInput.readLine();
+//                    line = dataInput.readUTF();
+
                     System.out.println("line! : " + line);
                     if (line != null) {
                         dialog.dismiss();

@@ -1,13 +1,9 @@
 package com.example.app3;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,17 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.Reader;
 
 
 import com.bumptech.glide.Glide;
@@ -35,29 +26,9 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.google.common.base.CharMatcher;
 
-import java.io.BufferedReader;
-import java.io.Reader;
-
-import org.json.JSONException;
-import org.json.JSONTokener;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.nio.charset.Charset;
-import java.text.Normalizer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+import java.io.*;
 public class Youtube extends YouTubeBaseActivity {
     YouTubePlayerView playerView;
     YouTubePlayer player;
@@ -82,11 +53,12 @@ public class Youtube extends YouTubeBaseActivity {
 
 
     private static String Music_list="";
+    private static byte[] music_list = new byte[] {};
     private static String[] videoId =new String[]{};
     private static String[] temp_list =new String[]{};
     private static String[] id_list =new String[]{};
 
-
+    private Process socket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,12 +66,16 @@ public class Youtube extends YouTubeBaseActivity {
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
         Music_list = intent.getStringExtra("List");
+
+//        music_list = intent.getByteArrayExtra("List");
+//        Music_list = String.valueOf(intent.getStringExtra("List").getBytes(StandardCharsets.UTF_8));
         temp_list=Music_list.split("   ");
         Music_list=temp_list[0];
         System.out.println("Music_list"+Music_list+"\n");
         System.out.println("temp_list"+temp_list[1]+"\n");
 
 
+//        Music_list = new String(music_list, StandardCharsets.UTF_8);
 
         String charsToRemove = "[]\"\'";
         Music_list = CharMatcher.anyOf(charsToRemove).removeFrom(Music_list);
@@ -133,8 +109,16 @@ public class Youtube extends YouTubeBaseActivity {
         }
 
 
+        Button filtering = findViewById(R.id.Filtering);
 
-
+        filtering.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), VavalEditPage.class);
+                startActivity(intent);
+                overridePendingTransition(R.transition.fade_in, R.transition.fade_out);
+            }
+        });
         //전체재생 버튼, 해당 버튼을 눌러도 되고 바로 리스트에 있는 임의의 음악을 눌러도 됨
         Button button = findViewById(R.id.playAll);
         button.setOnClickListener(new View.OnClickListener(){
