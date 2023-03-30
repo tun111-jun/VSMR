@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.DataInputStream;
@@ -24,6 +25,9 @@ import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 
 import javax.annotation.Nullable;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.DrawableImageViewTarget;
 
 public class Connect_server extends AppCompatActivity {
     Button send_button;
@@ -45,6 +49,8 @@ public class Connect_server extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connectserver);
 
+
+
         dialog = new ProgressDialog(
                 Connect_server.this);
         dialog.setProgressStyle(android.R.style.Widget_ProgressBar_Horizontal);
@@ -53,7 +59,9 @@ public class Connect_server extends AppCompatActivity {
         // show dialog
         dialog.show();
 
-
+        ImageView piano = (ImageView) findViewById(R.id.gif_image);
+        DrawableImageViewTarget gifImage = new DrawableImageViewTarget(piano);
+        Glide.with(this).load(R.drawable.piano).into(gifImage);
 
         Intent intent = getIntent();
         CONNECT_MSG = intent.getStringExtra("Date");
@@ -64,10 +72,8 @@ public class Connect_server extends AppCompatActivity {
     }
 
     private class Connect extends AsyncTask<String, String, Void> {
-
         private String output_message;
         private String input_message;
-
 
         @Override
         protected Void doInBackground(String... strings) {
@@ -117,7 +123,6 @@ public class Connect_server extends AppCompatActivity {
         protected void onProgressUpdate(String... params) {
             send_textView.setText(""); // Clear the chat box
             send_textView.append("보낸 메세지: " + output_message);
-
 
         }
     }

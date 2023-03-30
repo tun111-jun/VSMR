@@ -31,8 +31,6 @@ public class Login extends AppCompatActivity {
     boolean isLogin = false;
     Intent moveToYoutube;
     Intent moveToSelect;
-    //Intent moveToHome = new Intent(this, Home.class);
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,7 +45,7 @@ public class Login extends AppCompatActivity {
         Button Find_Password_Button = findViewById(R.id.Find_password);
 
         moveToYoutube = new Intent(this, Youtube.class);
-        moveToSelect = new Intent(this, SelectPage.class);
+        moveToSelect = new Intent(this, PictureActivity.class);
         Intent moveToFindPassword = new Intent(this, Find_Password.class);
 
         mAuth = FirebaseAuth.getInstance();
