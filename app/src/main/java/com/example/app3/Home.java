@@ -10,10 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Home extends AppCompatActivity {
-
     private final long finishtimed=1500;
     private long presstime=0;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +22,6 @@ public class Home extends AppCompatActivity {
 
         Intent moveToLogin = new Intent(this, Login.class);
         Intent moveToSU = new Intent(this, Sign_up.class);
-
-
-        //Login_Button.setOnClickListener(v->startActivity(moveToLogin));
 
         Login_Button.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -45,9 +40,6 @@ public class Home extends AppCompatActivity {
                 overridePendingTransition(R.transition.fade_in, R.transition.fade_out);
             }
         });
-
-
-
     }
     @Override
     public void onBackPressed() {
