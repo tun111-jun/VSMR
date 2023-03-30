@@ -47,7 +47,7 @@ public class Login extends AppCompatActivity {
         Button Find_Password_Button = findViewById(R.id.Find_password);
 
         moveToYoutube = new Intent(this, Youtube.class);
-        moveToSelect = new Intent(this, SelectPage.class);
+        moveToSelect = new Intent(this, PictureActivity.class);
         Intent moveToFindPassword = new Intent(this, Find_Password.class);
 
         mAuth = FirebaseAuth.getInstance();

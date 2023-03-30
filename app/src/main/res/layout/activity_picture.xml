@@ -67,7 +67,9 @@
         android:gravity="bottom|center"
         android:text="START!"
         android:textColor="@color/text"
-        android:textSize="20sp"
+        android:textSize="30sp"
+        android:fontFamily="@font/gabriola"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
