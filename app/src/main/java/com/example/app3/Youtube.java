@@ -457,10 +457,9 @@ public class Youtube extends YouTubeBaseActivity {
     }
 
     public void playVideo(int num){
-        if(player != null){
-            if(player.isPlaying())
-                System.out.println("isPlaying");
-                player.pause();
+        if(player != null && player.isPlaying()){
+            System.out.println("isPlaying");
+            player.pause();
         }
 
 
