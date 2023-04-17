@@ -15,7 +15,9 @@
         android:layout_marginEnd="31dp"
         android:layout_marginBottom="168dp"
         android:padding="10dp"
-        app:wheel_scroll_only_one_circle="true" />
+        app:wheel_scroll_only_one_circle="true"
+        app:wheel_reached_color="#B1CBFA"
+        />
 
     <TextView
         android:id="@+id/textview"
