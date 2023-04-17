@@ -71,35 +71,35 @@ public class Connect_server extends AppCompatActivity {
 //        dialog.show();
 
 
-//        dialog = new ProgressDialog(
-//                Connect_server.this);
-//        dialog.setProgressStyle(android.R.style.Widget_ProgressBar_Horizontal);
-//        dialog.setMessage("Creating a playlist...");
-//
-//
-//        dialog.show();
+        dialog = new ProgressDialog(
+                Connect_server.this);
+        dialog.setProgressStyle(android.R.style.Widget_ProgressBar_Horizontal);
+        dialog.setMessage("Creating a playlist...");
+
+
+        dialog.show();
 
         //ImageView piano = (ImageView) findViewById(R.id.gif_image);
         //DrawableImageViewTarget gifImage = new DrawableImageViewTarget(piano);
         //Glide.with(this).load(R.drawable.piano).into(gifImage);
 
-        ImageView progressImage = findViewById(R.id.progressImage);
-        ProgressBar progressBar = findViewById(R.id.progressBar);
-
-        int[] loadingImages = {R.drawable.star,R.drawable.smirking, R.drawable.party};
-        final int[] currentImageIndex = {0};
-
-        Handler handler = new Handler();
-        Runnable imageRunnable = new Runnable() {
-            @Override
-            public void run() {
-                progressImage.setImageResource(loadingImages[currentImageIndex[0]]);
-                currentImageIndex[0] = (currentImageIndex[0] +1)%loadingImages.length;
-                handler.postDelayed(this, 1000);//1초마다 이미지 변경
-            }
-        };
-        handler.postDelayed(imageRunnable,1000);
-        progressBar.setVisibility(View.GONE);
+//        ImageView progressImage = findViewById(R.id.progressImage);
+//        ProgressBar progressBar = findViewById(R.id.progressBar);
+//
+//        int[] loadingImages = {R.drawable.star,R.drawable.smirking, R.drawable.party};
+//        final int[] currentImageIndex = {0};
+//
+//        Handler handler = new Handler();
+//        Runnable imageRunnable = new Runnable() {
+//            @Override
+//            public void run() {
+//                progressImage.setImageResource(loadingImages[currentImageIndex[0]]);
+//                currentImageIndex[0] = (currentImageIndex[0] +1)%loadingImages.length;
+//                handler.postDelayed(this, 1000);//1초마다 이미지 변경
+//            }
+//        };
+//        handler.postDelayed(imageRunnable,1000);
+//        progressBar.setVisibility(View.GONE);
 
 
 
