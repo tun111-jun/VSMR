@@ -43,7 +43,7 @@ public class PictureActivity extends AppCompatActivity {
     ImageView imageView;
     Button button_send;
     Button back;
-    private String keyword="p/1.png";
+    private String keyword="<p>";
     private final long finishtimed=1500;
     private FirebaseStorage storage;
     private long presstime=0;
@@ -53,7 +53,11 @@ public class PictureActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture);
-
+        Intent intent = getIntent();
+        String temp_ky=intent.getStringExtra("Uid");
+        temp_ky=temp_ky.split("@")[0];
+        System.out.println("Intent_KEYWORD: "+temp_ky);
+        keyword = keyword+temp_ky;
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.hide();
 
@@ -143,6 +147,7 @@ public class PictureActivity extends AppCompatActivity {
                                 public void onClick(View view) {
 
 
+                                    System.out.println("KEYWORD : "+keyword);
                                     serv.putExtra("Date", keyword);
 
                                     startActivity(serv);
