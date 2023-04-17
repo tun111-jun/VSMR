@@ -21,7 +21,7 @@ public class Home extends AppCompatActivity {
         Button Login_Button = findViewById(R.id.Login);
 
         Intent moveToLogin = new Intent(this, Login.class);
-        Intent moveToSU = new Intent(this, Sign_up.class);
+        Intent moveToSU = new Intent(this, VavalEditPage.class);
 
         Login_Button.setOnClickListener(new View.OnClickListener(){
             @Override
