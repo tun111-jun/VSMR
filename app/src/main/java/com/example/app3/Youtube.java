@@ -32,6 +32,7 @@ import java.io.*;
 public class Youtube extends YouTubeBaseActivity {
     YouTubePlayerView playerView;
     YouTubePlayer player;
+
     LinearLayout ll;
     //ImageButton temp=null;
     int temp_vid=-1;
@@ -455,10 +456,9 @@ public class Youtube extends YouTubeBaseActivity {
     }
 
     public void playVideo(int num){
-        if(player != null){
-            if(player.isPlaying())
-                System.out.println("isPlaying");
-                player.pause();
+        if(player != null && player.isPlaying()){
+            System.out.println("isPlaying");
+            player.pause();
         }
 
 
