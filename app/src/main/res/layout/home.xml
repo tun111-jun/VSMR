@@ -8,20 +8,32 @@
     android:orientation="horizontal"
     tools:context=".Home">
 
+    <!--    <ImageView-->
+<!--        android:id="@+id/logo"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="168dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/logo" />-->
 
-    <ImageView
-        android:id="@+id/logo"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:fontFamily="@font/pretendard"
+        android:text="Tune\nYour\nArea"
+        android:textColor="@color/white"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-
-
+        app:layout_constraintVertical_bias="0.426"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/Login"
@@ -30,10 +42,11 @@
         android:layout_marginBottom="120dp"
         android:gravity="center"
         android:text="Log In"
-        android:textColor="@color/mid_Gray"
+        android:textColor="@color/yellow"
         android:textAlignment="center"
         android:textSize="30sp"
         android:background="#00ff0000"
+        android:fontFamily="@font/dohyun"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -41,24 +54,26 @@
 
     <Button
         android:id="@+id/sign_up"
+        android:fontFamily="@font/dohyun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
         android:gravity="center"
         android:text="Sign Up"
-        android:textColor="@color/mid_Gray"
+        android:textColor="@color/yellow"
         android:textAlignment="center"
         android:textSize="17sp"
         android:background="#00ff0000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
     <ImageView
         android:id="@+id/effect1"
         android:layout_width="53dp"
         android:layout_height="46dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="144dp"
         android:alpha="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,13 +83,12 @@
         android:id="@+id/effect2"
         android:layout_width="27dp"
         android:layout_height="26dp"
-        android:layout_marginEnd="216dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginEnd="240dp"
+        android:layout_marginBottom="80dp"
         android:alpha="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/effect" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

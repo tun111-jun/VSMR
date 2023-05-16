@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
+    android:gravity="center"
+
     android:background="@drawable/roundborder2"
     tools:context=".Youtube"
     >
@@ -14,17 +16,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:text="Video"
+        android:text="Result"
         android:textSize="35sp"
         android:layout_gravity="center"
-        android:textColor="#555555"
-        android:fontFamily="@font/gabriola"
+        android:textColor="@color/yellow"
+        android:fontFamily="@font/pretendard"
         android:lineSpacingExtra="-15sp"
         android:gravity="center_horizontal|top"
         android:shadowColor="#33000000"
         android:shadowDx="7.0"
         android:shadowDy="7.0"
         android:shadowRadius="2.0"
+        android:textStyle="bold"
+        android:layout_marginRight="15dp"
         />
 
     <com.google.android.youtube.player.YouTubePlayerView
@@ -38,11 +42,10 @@
         android:id="@+id/music_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
         android:text="Music List"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:textColor="#555555"
-        android:fontFamily="@font/gabriola"
+        android:fontFamily="@font/pretendard"
         android:lineSpacingExtra="-15sp"
         android:gravity="center_horizontal|top"
         android:shadowColor="#33000000"
@@ -70,8 +73,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#555555"
-        android:fontFamily="@font/gabriola"
-        android:textSize="25sp"
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
         android:textAllCaps="false"
         android:background="@drawable/rippleeffect"
         android:text="Play All" />
@@ -82,8 +85,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#555555"
-        android:fontFamily="@font/gabriola"
-        android:textSize="25sp"
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
         android:textAllCaps="false"
         android:background="@drawable/rippleeffect"
         android:text="Filtering" />
@@ -94,8 +97,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#555555"
-        android:fontFamily="@font/gabriola"
-        android:textSize="25sp"
+        android:fontFamily="@font/pretendard"
+        android:textSize="15sp"
         android:textAllCaps="false"
         android:background="@drawable/rippleeffect"
         android:text="Back" />
