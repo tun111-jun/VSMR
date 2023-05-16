@@ -5,4 +5,14 @@
         android:fontWeight="400"
         android:font="@font/gabriola"/>
 
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/dohyun"/>
+
+    <font
+        android:font="@font/pretendard"
+        android:fontStyle="normal"
+        android:fontWeight="400"/>
+
 </font-family>

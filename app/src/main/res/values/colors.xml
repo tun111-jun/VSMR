@@ -10,7 +10,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Light_Gray">#DDDDDD</color>
     <color name="mid_Gray">#999999</color>
-    <color name="background">#F7F7F7</color>
+    <color name="yellow">#F5CE45</color>
+    <color name="background">#080A1C</color>
     <color name="fill">#E7EAF6</color>
     <color name="out">#A2A8D3</color>
     <color name="text">#D9141414</color>

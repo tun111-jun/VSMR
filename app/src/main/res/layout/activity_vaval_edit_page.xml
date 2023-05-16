@@ -13,12 +13,12 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="31dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="154dp"
         android:padding="10dp"
+        app:srcCompat="@drawable/custom_seekbar_thumb"
         app:wheel_max_process="100"
         app:wheel_scroll_only_one_circle="true"
-        tools:ignore="MissingClass"
-        app:srcCompat="@drawable/custom_seekbar_thumb" />
+        tools:ignore="MissingClass" />
 
     <TextView
         android:id="@+id/textview"
@@ -29,22 +29,22 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="126dp"
         android:layout_marginEnd="127dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="250dp"
         android:text=""
-        android:textColor="@color/black"
+        android:textColor="@color/yellow"
         android:textSize="20sp"
         android:textAlignment="center"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:fontFamily="@font/dohyun"/>
 
     <ImageView
         android:id="@+id/faceImageView"
-        android:layout_width="81dp"
-        android:layout_height="75dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="165dp"
-        android:layout_marginBottom="319dp"
-        />
+        android:layout_marginEnd="153dp"
+        android:layout_marginBottom="296dp" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -58,11 +58,11 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="252dp"
-        android:layout_height="56dp"
+        android:layout_width="397dp"
+        android:layout_height="219dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="79dp"
-        android:layout_marginBottom="563dp"
-        app:srcCompat="@drawable/tune" />
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="515dp"
+        app:srcCompat="@drawable/filtering" />
 </RelativeLayout>
