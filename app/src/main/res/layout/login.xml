@@ -31,16 +31,15 @@
         android:src="@drawable/effect"
         />
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/pretendard"
-        android:text="SIGN IN"
+        android:text="Sign In"
         android:textSize="40dp"
-        android:layout_marginLeft="135dp"
         android:textStyle="bold"
-        />
-
+        android:layout_gravity="center"/>
 
     <ImageView
         android:id="@+id/effect2"
