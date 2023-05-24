@@ -45,7 +45,7 @@ public class VavalEditPage extends AppCompatActivity {
                     faceText.setText("AMUSE");
                 } else if (seekBar.getCurProcess() < 62.5) {
                     faceImage.setImageResource(R.drawable.awe);
-                    faceText.setText("AWE");
+                    faceText.setText("AWESOME");
                 } else if (seekBar.getCurProcess() < 75) {
                     faceImage.setImageResource(R.drawable.contentment);
                     faceText.setText("CONTENTMENT");
