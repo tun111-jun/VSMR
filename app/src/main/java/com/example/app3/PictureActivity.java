@@ -5,9 +5,11 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultCaller;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -17,12 +19,16 @@ import android.os.Bundle;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
@@ -55,7 +61,7 @@ public class PictureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_picture);
         Intent intent = getIntent();
         String temp_ky=intent.getStringExtra("Uid");
-        temp_ky=temp_ky.split("@")[0];
+        temp_ky=temp_ky.split("\\.")[0];
         System.out.println("Intent_KEYWORD: "+temp_ky);
         keyword = keyword+temp_ky;
 //        ActionBar actionBar = getSupportActionBar();
@@ -114,58 +120,76 @@ public class PictureActivity extends AppCompatActivity {
                 @Override
                 public void onActivityResult(ActivityResult result) {
                     if(result.getResultCode()==RESULT_OK && result.getData() != null){
-                        System.out.println("OnACtivityResult2");
+
+                        ProgressDialog progressDialog = new ProgressDialog(PictureActivity.this);
+                        progressDialog.setMessage("Uploading...");
+                        progressDialog.setCancelable(false); // 터치를 막기 위해 취소 불가능 설정
+                        progressDialog.show(); // ProgressDialog 표시
                         uri = result.getData().getData();
                         StorageReference storageRef=storage.getReference();
 
                         StorageReference riversRef=storageRef.child(keyword);
                         UploadTask uploadTask=riversRef.putFile(uri);
 
-                        try{
-                            System.out.println("OnACtivityResult1");
-                            InputStream in=getContentResolver().openInputStream(result.getData().getData());
-                            Bitmap img=BitmapFactory.decodeStream(in);
-                            in.close();
-                            imageView.setImageBitmap(img);
-                            System.out.println("OnACtivityResult3");
-//                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-//                            System.out.println("Path : "+uri.getPath());
+                        uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                        // 업로드가 완료되었을 때 실행되는 코드
+                                        Log.d("Upload", "사진이 성공적으로 업로드되었습니다.");
+                                        progressDialog.dismiss();
+                                        try{
+
+                                            InputStream in=getContentResolver().openInputStream(result.getData().getData());
+                                            Bitmap img=BitmapFactory.decodeStream(in);
+                                            in.close();
+                                            imageView.setImageBitmap(img);
+
 //
-//                            imageView.setImageBitmap(bitmap);
-//                            ByteArrayOutputStream stream=new ByteArrayOutputStream();
-//
-//                            bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
-//                            byte[] bytearray=stream.toByteArray();
-//                            //String byteaaray= Base64.encodeToString(bytearray,Base64.NO_WRAP);
-//                            //Bitmap compressedBitmap = BitmapFactory.decodeByteArray(bytearray,0,bytearray.length);
-//
-                            if(button_send.getVisibility() == View.INVISIBLE){
-                                button_send.setVisibility(View.VISIBLE);
-                            }
-                            button_send.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
+                                            if(button_send.getVisibility() == View.INVISIBLE){
+                                                button_send.setVisibility(View.VISIBLE);
+                                            }
+                                            button_send.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
 
 
-                                    System.out.println("KEYWORD : "+keyword);
-                                    serv.putExtra("Date", keyword);
+                                                    System.out.println("KEYWORD : "+keyword);
+                                                    serv.putExtra("Date", keyword);
 
-                                    startActivity(serv);
-                                    overridePendingTransition(R.transition.fade_in, R.transition.fade_out);
-                                    //finish();
-                                }
-                            });
-//                            serv.putExtra("Date", keyword);
-//
-//                            startActivity(serv);
-//
-//                            System.out.println("BYTEARRAY: "+bytearray);
+                                                    startActivity(serv);
+                                                    overridePendingTransition(R.transition.fade_in, R.transition.fade_out);
+                                                    //finish();
+                                                }
+                                            });
 
-                        }catch (FileNotFoundException e){
-                            e.printStackTrace();
-                        }catch (IOException e){
-                            e.printStackTrace();
-                        }
+
+                                        }catch (FileNotFoundException e){
+                                            e.printStackTrace();
+                                        }catch (IOException e){
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                })
+                                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                                        // 업로드 진행 상황을 표시하는 부분
+                                        double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
+
+                                        // 진행 상황을 프로그레스 바에 업데이트
+                                        progressDialog.setProgress((int) progress);
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        // 업로드 실패 시 실행되는 코드
+                                        Log.e("Upload", "사진 업로드에 실패했습니다.", e);
+
+                                        progressDialog.dismiss();
+                                    }
+                                });
+
                     }
                 }
             }

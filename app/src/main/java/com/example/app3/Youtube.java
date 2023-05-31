@@ -188,6 +188,13 @@ public class Youtube extends YouTubeBaseActivity {
                             Glide.with(getApplicationContext()).load("https://img.youtube.com/vi/" + videoId[i] + "/" + "default.jpg").into(imageView);
                             imageView.setClipToOutline(true);
                         }
+
+
+                    }
+                    if(position==n){
+                        System.out.println("TO : "+n);
+                        Glide.with(getApplicationContext()).load("https://img.youtube.com/vi/" + videoId[n] + "/" + "default.jpg").into(imageView);
+                        imageView.setClipToOutline(true);
                     }
 
 
