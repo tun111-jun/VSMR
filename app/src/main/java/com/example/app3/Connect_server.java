@@ -76,7 +76,7 @@ public class Connect_server extends AppCompatActivity {
         dialog.setProgressStyle(android.R.style.Widget_ProgressBar_Horizontal);
         dialog.setMessage("Creating a playlist...");
 
-
+        dialog.setCancelable(false);
         dialog.show();
 
         //ImageView piano = (ImageView) findViewById(R.id.gif_image);
