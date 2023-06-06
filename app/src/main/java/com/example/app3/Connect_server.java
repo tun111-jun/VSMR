@@ -3,44 +3,32 @@ package com.example.app3;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDialog;
 
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.drawable.AnimatedImageDrawable;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import java.io.*;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.math.BigInteger;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
-
-import javax.annotation.Nullable;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.DrawableImageViewTarget;
 
 public class Connect_server extends AppCompatActivity {
     Button send_button;
     EditText send_editText;
     TextView send_textView;
     TextView read_textView;
-    ProgressDialog dialog;
+    AppCompatDialog dialog;
     private Socket client;
     private DataOutputStream dataOutput;
     private DataInputStream dataInput;
@@ -50,56 +38,31 @@ public class Connect_server extends AppCompatActivity {
 
     private static int BUF_SIZE = 100;
 
+    ImageView img_loading_frame;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connectserver);
 
-//        AlertDialog.Builder builder = new AlertDialog.Builder(Connect_server.this);
-//        LayoutInflater inflater = LayoutInflater.from(Connect_server.this);
-//        View dialogView = inflater.inflate(R.layout.custom_dialog_layout, null);
-//        ImageView imageView = dialogView.findViewById(R.id.gif_image);
-//        imageView.setBackgroundResource(R.drawable.piano);
+//        dialog = new ProgressDialog(
+//                Connect_server.this);
+//        dialog.setProgressStyle(android.R.style.Widget_ProgressBar_Horizontal);
+//        dialog.setMessage("Creating a playlist...");
 //
-//        AnimatedImageDrawable animationDrawable = null;
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
-//            animationDrawable = (AnimatedImageDrawable) imageView.getBackground();
-//        }
-//        animationDrawable.start();
-//        builder.setView(dialogView);
-//        AlertDialog dialog = builder.create();
+//        dialog.setCancelable(false);
 //        dialog.show();
 
-
-        dialog = new ProgressDialog(
-                Connect_server.this);
-        dialog.setProgressStyle(android.R.style.Widget_ProgressBar_Horizontal);
-        dialog.setMessage("Creating a playlist...");
-
+        dialog = new AppCompatDialog(this);
         dialog.setCancelable(false);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.setContentView(R.layout.connectserver);
         dialog.show();
 
-        //ImageView piano = (ImageView) findViewById(R.id.gif_image);
-        //DrawableImageViewTarget gifImage = new DrawableImageViewTarget(piano);
-        //Glide.with(this).load(R.drawable.piano).into(gifImage);
 
-//        ImageView progressImage = findViewById(R.id.progressImage);
-//        ProgressBar progressBar = findViewById(R.id.progressBar);
-//
-//        int[] loadingImages = {R.drawable.star,R.drawable.smirking, R.drawable.party};
-//        final int[] currentImageIndex = {0};
-//
-//        Handler handler = new Handler();
-//        Runnable imageRunnable = new Runnable() {
-//            @Override
-//            public void run() {
-//                progressImage.setImageResource(loadingImages[currentImageIndex[0]]);
-//                currentImageIndex[0] = (currentImageIndex[0] +1)%loadingImages.length;
-//                handler.postDelayed(this, 1000);//1초마다 이미지 변경
-//            }
-//        };
-//        handler.postDelayed(imageRunnable,1000);
-//        progressBar.setVisibility(View.GONE);
+        img_loading_frame = dialog.findViewById(R.id.progressImage);
+        AnimationDrawable frameAnimation = (AnimationDrawable) img_loading_frame.getBackground();
+        img_loading_frame.post(() -> frameAnimation.start());
 
 
 
