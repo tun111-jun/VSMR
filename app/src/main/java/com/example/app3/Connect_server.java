@@ -87,7 +87,7 @@ public class Connect_server extends AppCompatActivity {
 //                InputStreamReader inputStreamReader = new InputStreamReader(dataInput, StandardCharsets.UTF_8);
 //                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
-                output_message = strings[0];
+                output_message = CONNECT_MSG;
                 dataOutput.writeUTF(output_message);
 
             } catch (UnknownHostException e) {

@@ -37,11 +37,14 @@ dependencies {
     implementation files('libs\\YouTubeAndroidPlayerApi.jar')
     implementation files('libs\\jsoup-1.15.3.jar')
     implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-firestore:24.4.1'
+    //implementation 'com.google.firebase:firebase-firestore:24.4.1'
+    implementation 'com.google.firebase:firebase-firestore:1.8.1'
     implementation 'com.google.firebase:firebase-auth'
-    implementation 'com.google.firebase:firebase-auth:21.0.1'
+    //implementation 'com.google.firebase:firebase-auth:21.0.1'
+    implementation 'com.google.firebase:firebase-auth:1.35.0'
     implementation 'com.google.firebase:firebase-database:20.0.2'
     implementation 'com.google.firebase:firebase-storage:20.0.0'
+
     implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
     //implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.13.2'
