@@ -52,7 +52,7 @@ public class Youtube extends YouTubeBaseActivity {
     //API key AIzaSyDvycuGNf8DbrWxzRWkwQFsyREzkOju4TI
     private static String API_KEY = "AIzaSyDvycuGNf8DbrWxzRWkwQFsyREzkOju4TI";
 
-
+    private static final int RECOVERY_REQUEST = 1;
     private static String Music_list="";
     private static byte[] music_list = new byte[] {};
     private static String[] videoId =new String[]{};
@@ -90,7 +90,7 @@ public class Youtube extends YouTubeBaseActivity {
         oDialog = new AlertDialog.Builder(this,
                 android.R.style.Theme_DeviceDefault_Light_Dialog);
 
-
+        System.out.println("temp_list-------------------------");
         ArrayList<String> listitem=new ArrayList<String>();
         listitem_temp=new ArrayList<String>();
 
@@ -306,12 +306,13 @@ public class Youtube extends YouTubeBaseActivity {
     public void initPlayer(){
         //재생화면
         playerView = findViewById(R.id.playerView);
-
+        System.out.println("set-------------------------");
         /* YouTubePlayerView 초기화 하기 */
         playerView.initialize(API_KEY, new YouTubePlayer.OnInitializedListener(){
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider,
                                                 YouTubePlayer youTubePlayer, boolean b){
+                System.out.println("success-------------------------");
                 player = youTubePlayer;
                 player.setPlaybackEventListener(new YouTubePlayer.PlaybackEventListener() {
                     @Override
@@ -458,8 +459,17 @@ public class Youtube extends YouTubeBaseActivity {
             }
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider,
-                                                YouTubeInitializationResult youTubeInitializationResult){}
+                                                YouTubeInitializationResult youTubeInitializationResult){
+                if (youTubeInitializationResult.isUserRecoverableError()) {
+                    // 사용자 복구 가능한 오류인 경우
+                    youTubeInitializationResult.getErrorDialog(Youtube.this, RECOVERY_REQUEST).show();
+                } else {
+                    // 사용자 복구 불가능한 오류인 경우
+                    Log.e("YouTubePlayer", "Error initializing YouTube player: " + youTubeInitializationResult.toString());
+                }
+            }
         });
+        System.out.println("last-------------------------");
     }
 
     public void playVideo(int num){
