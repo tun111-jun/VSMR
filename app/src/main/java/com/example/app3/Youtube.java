@@ -62,6 +62,7 @@ public class Youtube extends YouTubeBaseActivity {
 
     private Process socket;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -260,6 +261,15 @@ public class Youtube extends YouTubeBaseActivity {
         listview1=findViewById(R.id.listView1);
         listview1.setAdapter(adapter);
 
+        //길게 클릭 했을 때, toast로 상세정보 띄우기. 수정필요
+        listview1.setOnLongClickListener(new AdapterView.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(getApplicationContext(),"상세정보",Toast.LENGTH_SHORT);
+                return true;
+            }
+        });
+
         listview1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                              // 콜백매개변수는 순서대로 어댑터뷰, 해당 아이템의 뷰, 클릭한 순번, 항목의 아이디
                                              @Override
@@ -282,6 +292,7 @@ public class Youtube extends YouTubeBaseActivity {
                                                  //adapter.notifyDataSetChanged();
                                              }
         });
+
     }
     @Override
     public void onBackPressed() {
@@ -309,6 +320,7 @@ public class Youtube extends YouTubeBaseActivity {
         System.out.println("set-------------------------");
         /* YouTubePlayerView 초기화 하기 */
         playerView.initialize(API_KEY, new YouTubePlayer.OnInitializedListener(){
+
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider,
                                                 YouTubePlayer youTubePlayer, boolean b){

@@ -5,6 +5,7 @@ package com.example.app3;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialog;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
@@ -28,7 +29,9 @@ public class Connect_server extends AppCompatActivity {
     EditText send_editText;
     TextView send_textView;
     TextView read_textView;
+
     AppCompatDialog dialog;
+    //ProgressDialog dialog;
     private Socket client;
     private DataOutputStream dataOutput;
     private DataInputStream dataInput;
@@ -53,12 +56,12 @@ public class Connect_server extends AppCompatActivity {
 //        dialog.setCancelable(false);
 //        dialog.show();
 
-        dialog = new AppCompatDialog(this);
+        //new
+        dialog = new AppCompatDialog(Connect_server.this);
         dialog.setCancelable(false);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         dialog.setContentView(R.layout.connectserver);
         dialog.show();
-
 
         img_loading_frame = dialog.findViewById(R.id.progressImage);
         AnimationDrawable frameAnimation = (AnimationDrawable) img_loading_frame.getBackground();
@@ -77,6 +80,8 @@ public class Connect_server extends AppCompatActivity {
     private class Connect extends AsyncTask<String, String, Void> {
         private String output_message;
         private String input_message;
+
+
 
         @Override
         protected Void doInBackground(String... strings) {
@@ -132,6 +137,8 @@ public class Connect_server extends AppCompatActivity {
 
         @Override
         protected void onProgressUpdate(String... params) {
+
+
             send_textView.setText(""); // Clear the chat box
             send_textView.append("보낸 메세지: " + output_message);
 
