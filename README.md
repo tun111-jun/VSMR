@@ -25,6 +25,11 @@ To see the **Model** of our project, Click [Here]()
 <img src ="https://github.com/tun111-jun/VSMR/assets/101571762/6bdaff22-36ca-402c-b3e3-ece0986bb53d" width="20%" height="20%"/>
 <img src ="https://github.com/tun111-jun/VSMR/assets/101571762/664b362e-8673-4f01-bdc5-a3a461581fd1" width="20%" height="20%"/>
 
+## Firebase
+User email field
+<img width="1189" alt="스크린샷 2023-06-17 오후 7 05 48" src="https://github.com/ShinJunYoung/TuneYourArea/assets/90844568/0259d184-d4a1-45f2-84c8-a7582bcc05f7">
+
+
 
 <img src ="https://github.com/tun111-jun/VSMR/assets/101571762/2ed12990-4619-4c82-b560-98e7dd461a01" width="170"/>
 
