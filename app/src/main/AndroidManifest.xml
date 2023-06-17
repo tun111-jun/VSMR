@@ -27,9 +27,9 @@
         <activity
             android:name=".VavalEditPage"
             android:exported="false" />
-        <activity
-            android:name=".LoadingActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".LoadingActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".Home"
             android:exported="true">
