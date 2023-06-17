@@ -26,7 +26,7 @@ To see the **Model** of our project, Click [Here]()
 <img src ="https://github.com/tun111-jun/VSMR/assets/101571762/664b362e-8673-4f01-bdc5-a3a461581fd1" width="20%" height="20%"/>
 
 
-<img src ="https://github.com/tun111-jun/VSMR/assets/101571762/2ed12990-4619-4c82-b560-98e7dd461a01" width="160"/>
+<img src ="https://github.com/tun111-jun/VSMR/assets/101571762/2ed12990-4619-4c82-b560-98e7dd461a01" width="170"/>
 
 
 ## Demo Video
