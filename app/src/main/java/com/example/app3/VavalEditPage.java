@@ -22,6 +22,7 @@ public class VavalEditPage extends AppCompatActivity {
     private TextView faceText;
     private ImageView faceButton;
     private FirebaseAuth mAuth;
+    private String keyword="<m>";
 
     private CircleSeekBar seekBar_temp;
 
@@ -42,6 +43,7 @@ public class VavalEditPage extends AppCompatActivity {
         }
 
         Uid=Uid.split("\\.")[0];
+        keyword=keyword+Uid;
         System.out.println("Intent_KEYWORD: "+Uid);
 
         faceImage = findViewById(R.id.faceImageView);
@@ -53,7 +55,7 @@ public class VavalEditPage extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Connect_server.class);
                 System.out.println("type:"+seekBar_temp.getCurProcess()+" "+seekBar_temp.toString()+" "+seekBar_temp);
-                intent.putExtra("Date", Uid+","+String.valueOf(seekBar_temp.getCurProcess()));
+                intent.putExtra("Date", keyword+","+String.valueOf(seekBar_temp.getCurProcess()));
                 startActivity(intent);
 
                 overridePendingTransition(R.transition.fade_in, R.transition.fade_out);

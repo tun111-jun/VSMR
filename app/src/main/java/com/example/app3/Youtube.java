@@ -34,12 +34,11 @@ public class Youtube extends YouTubeBaseActivity {
     YouTubePlayer player;
 
     LinearLayout ll;
-    //ImageButton temp=null;
+
     int temp_vid=-1;
     int flag=0;
     private ListView listview=null;
-    //ImageButton imgbutton;
-    //TextView textView;
+
     ImageView imageView1;
     private final long finishtimed=1500;
     ArrayAdapter<String> adapter;
@@ -58,7 +57,7 @@ public class Youtube extends YouTubeBaseActivity {
     private static String[] videoId =new String[]{};
     private static String[] temp_list =new String[]{};
     private static String[] id_list =new String[]{};
-    //private static String[] videoId ={"sAbU56aE9GA","v7JGdwm_9W0","xnku4o3tRB4","8Bwvv_Nr9rM","qJe9SZZYkHw"};
+
 
     private Process socket;
 
@@ -69,15 +68,13 @@ public class Youtube extends YouTubeBaseActivity {
         Intent intent = getIntent();
         Music_list = intent.getStringExtra("List");
 
-//        music_list = intent.getByteArrayExtra("List");
-//        Music_list = String.valueOf(intent.getStringExtra("List").getBytes(StandardCharsets.UTF_8));
         temp_list=Music_list.split("   ");
         Music_list=temp_list[0];
         System.out.println("Music_list"+Music_list+"\n");
         System.out.println("temp_list"+temp_list[1]+"\n");
 
 
-//        Music_list = new String(music_list, StandardCharsets.UTF_8);
+
 
         String charsToRemove = "[]\"\'";
         Music_list = CharMatcher.anyOf(charsToRemove).removeFrom(Music_list);
@@ -102,7 +99,6 @@ public class Youtube extends YouTubeBaseActivity {
         for (int i = 0; i< num; i++) {
 
             listitem.add(id_list[i]);
-            //System.out.println("List : "+videoId[i]);
             listitem_temp.add(id_list[i]);
 
         }
@@ -266,7 +262,6 @@ public class Youtube extends YouTubeBaseActivity {
                                              public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                                                  //플레이리스트의 임의의 음악을 선택하였을 때 재생될 수 있게 작성
-                                                 //Toast.makeText(getApplicationContext(),listitem.get(i).toString() + " 재생.",Toast.LENGTH_SHORT).show();
                                                  n=i;
                                                  if(temp_vid!=-1){
                                                      listitem_temp.set(temp_vid,id_list[temp_vid]);
@@ -279,7 +274,7 @@ public class Youtube extends YouTubeBaseActivity {
 
                                                  playVideo(n);
 
-                                                 //adapter.notifyDataSetChanged();
+
                                              }
         });
     }
@@ -330,10 +325,7 @@ public class Youtube extends YouTubeBaseActivity {
 
                     @Override
                     public void onPaused() {
-//                        if(temp_vid!=-1){
-//                            listitem_temp.set(temp_vid,videoId[temp_vid]);
-//                            adapter.notifyDataSetChanged();
-//                        }
+
                         System.out.println("onPaused");
                         listitem_temp.set(n,id_list[n]+" - Paused");
                         adapter.notifyDataSetChanged();
@@ -370,7 +362,6 @@ public class Youtube extends YouTubeBaseActivity {
 
                         System.out.println("onLoaded");
 //                        ImageButton imgbutton1 = (ImageButton)findViewById(R.id.button);
-//
 //                        imgbutton1.setVisibility(View.INVISIBLE);
                         player.play();  // 동영상이 로딩되었으면 재생하기
 
@@ -398,7 +389,7 @@ public class Youtube extends YouTubeBaseActivity {
 
                             //리스트의 음악이 모두 재생되면 pause or 처음부터 재생.
                             oDialog.setMessage("playback is over. Would you like to play from the beginning?")
-                                    .setTitle("Tune Your Area")
+                                    .setTitle("VSMR")
                                     .setPositiveButton("Stop", new DialogInterface.OnClickListener()
                                     {
                                         @Override
@@ -413,17 +404,13 @@ public class Youtube extends YouTubeBaseActivity {
                                     {
                                         public void onClick(DialogInterface dialog, int which)
                                         {
-                                            System.out.println("Here31::"+n);
-                                            System.out.println("Video_ID: "+videoId.length);
+
                                             listitem_temp.set(n,id_list[n]);
                                             adapter.notifyDataSetChanged();
                                             n=0;
                                             temp_vid=n;
-                                            System.out.println("Onclick : "+n+temp_vid);
                                             listitem_temp.set(n,id_list[n]+" - Playing...");
                                             adapter.notifyDataSetChanged();
-                                            System.out.println("Onclick2 : "+videoId[0]+listitem_temp.get(0));
-                                            System.out.println("Onclick3 : "+n+temp_vid);
                                             playVideo(n);
                                             //player.loadVideo(videoId[num]);
                                         }
@@ -437,8 +424,6 @@ public class Youtube extends YouTubeBaseActivity {
                         }
                         else{
                             //재생 중인 음악이 종료되면 다음 음악으로 넘어감
-                            System.out.println("Here1::"+n);
-                            System.out.println("Video_ID: "+videoId.length);
                             listitem_temp.set(n,id_list[n]);
                             adapter.notifyDataSetChanged();
                             n=n+1;
@@ -482,8 +467,6 @@ public class Youtube extends YouTubeBaseActivity {
 
 //                        if(temp!=null)
 //                            temp.setVisibility(View.VISIBLE);
-        System.out.println("Video_ID: "+videoId.length);
-
             player.loadVideo(videoId[num]);
 
 

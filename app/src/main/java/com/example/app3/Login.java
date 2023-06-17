@@ -35,9 +35,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.out.println("44");
         setContentView(R.layout.login);
-        System.out.println("33");
         EditText enterEmail = findViewById(R.id.Login_email);
         EditText enterPassword = findViewById(R.id.Login_password);
 
@@ -98,11 +96,9 @@ public class Login extends AppCompatActivity {
 
                                 Log.d("TOKEN",Uid);
 
-                                //String UId=Uid;
                             }
                             //이후에 임의의 엑티비티에서 넘겨진 해당 Uid를 활용
-                            //moveToYoutube.putExtra("Uid", Uid);
-                            //startActivity(moveToYoutube);
+
                             moveToSelect.putExtra("Uid", Uid);
                             startActivity(moveToSelect);
                             overridePendingTransition(R.transition.fade_in, R.transition.fade_out);

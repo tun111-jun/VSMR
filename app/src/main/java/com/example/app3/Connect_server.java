@@ -45,13 +45,6 @@ public class Connect_server extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connectserver);
 
-//        dialog = new ProgressDialog(
-//                Connect_server.this);
-//        dialog.setProgressStyle(android.R.style.Widget_ProgressBar_Horizontal);
-//        dialog.setMessage("Creating a playlist...");
-//
-//        dialog.setCancelable(false);
-//        dialog.show();
 
         dialog = new AppCompatDialog(this);
         dialog.setCancelable(false);
@@ -84,8 +77,6 @@ public class Connect_server extends AppCompatActivity {
                 client = new Socket(SERVER_IP, 12125);
                 dataOutput = new DataOutputStream(client.getOutputStream());
                 dataInput = new DataInputStream(client.getInputStream());
-//                InputStreamReader inputStreamReader = new InputStreamReader(dataInput, StandardCharsets.UTF_8);
-//                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
                 output_message = CONNECT_MSG;
                 dataOutput.writeUTF(output_message);
@@ -106,14 +97,11 @@ public class Connect_server extends AppCompatActivity {
                     InputStreamReader inputStreamReader = new InputStreamReader(dataInput, StandardCharsets.UTF_8);
                     BufferedReader reader = new BufferedReader(inputStreamReader);
                     line = reader.readLine();
-//                    line = dataInput.readLine();
-//                    line = dataInput.readUTF();
 
                     System.out.println("line! : " + line);
                     if (line != null) {
                         dialog.dismiss();
                         publishProgress(input_message);
-                        System.out.println("InPut_MeSSAGE! : " + input_message);
                         Intent intent = new Intent(getApplicationContext(), Youtube.class);
                         intent.putExtra("List", line);
                         startActivity(intent);
