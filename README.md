@@ -31,7 +31,8 @@ User email field
 <img width="1189" alt="스크린샷 2023-06-17 오후 7 05 48" src="https://github.com/ShinJunYoung/TuneYourArea/assets/90844568/0259d184-d4a1-45f2-84c8-a7582bcc05f7">
 
 ## Demo Video
-### Youtube Video Link(https://youtu.be/4Jv8XR27jrw)
+### Youtube Video Link
+## https://youtu.be/4Jv8XR27jrw
 
 ## Resources
 [Microsoft-Emoji](https://github.com/microsoft/fluentui-emoji)
